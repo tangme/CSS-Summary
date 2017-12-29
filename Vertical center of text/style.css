@@ -1,0 +1,30 @@
+body{
+	background-color: #ccc;
+}
+
+.out-div{
+	background-color: skyblue;
+	overflow: hidden;
+}
+
+.floatLeft{
+	float: left;
+}
+
+.inlineMiddleText{
+	height: 300px;
+	line-height: 300px;
+}
+
+.toTable{
+	display: table;
+}
+.toTableCell{
+	display: table-cell;
+}
+.multLineText{
+	height: 300px;
+}
+.multLineText .toTableCell{
+	vertical-align: middle;
+}

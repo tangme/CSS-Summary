@@ -2,9 +2,17 @@ body{
 	background-color: #ccc;
 }
 
+.main-div{
+	width: 80%;
+	margin:auto;
+}
 .out-div{
 	background-color: skyblue;
 	overflow: hidden;
+	margin:1em;
+}
+.out-div p{
+	margin:0;
 }
 
 .floatLeft{
@@ -28,3 +36,11 @@ body{
 .multLineText .toTableCell{
 	vertical-align: middle;
 }
+
+#div1{
+            width: 300px;
+            margin: 50px auto;
+            border: 1px solid red;
+            text-align: center; /*设置文本水平居中*/
+            padding: 50px 20px;
+        }

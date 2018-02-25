@@ -1,46 +1,52 @@
-body{
-	background-color: #ccc;
+body {
+    background-color: #f8f8f9;
 }
 
-.main-div{
-	width: 80%;
-	margin:auto;
-}
-.out-div{
-	background-color: skyblue;
-	overflow: hidden;
-	margin:1em;
-}
-.out-div p{
-	margin:0;
+.main-div {
+    width: 80%;
+    margin: auto;
 }
 
-.floatLeft{
-	float: left;
+.out-div {
+    background-color: lightblue;
+    overflow: hidden;
+    margin: 1em;
 }
 
-.inlineMiddleText{
-	height: 300px;
-	line-height: 300px;
+.out-div p {
+    margin: 0;
 }
 
-.toTable{
-	display: table;
-}
-.toTableCell{
-	display: table-cell;
-}
-.multLineText{
-	height: 300px;
-}
-.multLineText .toTableCell{
-	vertical-align: middle;
+.floatLeft {
+    float: left;
 }
 
-#div1{
-            width: 300px;
-            margin: 50px auto;
-            border: 1px solid red;
-            text-align: center; /*设置文本水平居中*/
-            padding: 50px 20px;
-        }
+.inlineMiddleText {
+    height: 150px;
+    line-height: 150px;
+}
+
+.toTable {
+    display: table;
+}
+
+.toTableCell {
+    display: table-cell;
+}
+
+.multLineText {
+    height: 150px;
+}
+
+.multLineText .toTableCell {
+    vertical-align: middle;
+}
+
+#div1 {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid red;
+    text-align: center;
+    /*设置文本水平居中*/
+    padding: 50px 0;
+}

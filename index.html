@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>各种 CSS 小Demo</title>
+    <meta charset="UTF-8">
+    <title>各种 CSS 小Demo</title>
+    <link href="https://cdn.bootcss.com/iview/2.10.1/styles/iview.css" rel="stylesheet">
+    <style>
+    header {
+        height: 150px;
+    }
+
+    body {
+        /* background: url(./resource/images/plaid.jpg); */
+    }
+    </style>
 </head>
+
 <body>
-	<a href="./Vertical center of text/demo.html">文字剧中对齐demo</a>
+    <header></header>
+    <div id="app" style="max-width: 1200px;margin: auto;">
+        <Card>
+            <auto-complete size="large" v-model="value1" :data="data1" @on-search="handleSearch1" placeholder="搜索关键字"></auto-complete>
+            <br>
+            <br>
+            <i-table size="large" :columns="column" :data="data"></i-table>
+        </Card>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.5.15/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/iview/2.10.1/iview.min.js"></script>
+    <script src="https://cdn.bootcss.com/iview/2.10.1/locale/zh-CN.js"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            column: [{
+                title: '描述',
+                key: 'describe',
+                render: (h, params) => {
+                    return h('a', {
+                        attrs: {
+                            href: params.row.url,
+                            target: "_blank"
+                        }
+                    }, params.row.describe);
+                }
+            }],
+            data: [
+                { describe: '文字剧中对齐', url: './Vertical center of text/demo.html' }
+            ],
+            data1: [],
+            value1: ''
+        },
+        methods: {
+            handleSearch1(value) {
+                this.data1 = !value ? [] : [
+                    value,
+                    value + value,
+                    value + value + value
+                ];
+            }
+        }
+    });
+    </script>
 </body>
+
 </html>

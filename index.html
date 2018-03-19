@@ -11,7 +11,7 @@
     }
 
     body {
-        /* background: url(./resource/images/plaid.jpg); */
+        background: #f8f8f9;
     }
     </style>
 </head>
@@ -20,10 +20,11 @@
     <header></header>
     <div id="app" style="max-width: 1200px;margin: auto;">
         <Card>
-            <auto-complete size="large" v-model="value1" :data="data1" @on-search="handleSearch1" placeholder="搜索关键字"></auto-complete>
+            <!-- <auto-complete size="large" v-model="value1" :data="data1" @on-search="handleSearch1" placeholder="搜索关键字"></auto-complete> -->
+            <i-input size="large" placeholder="搜索关键字" v-model="searchValue"></i-input>
             <br>
             <br>
-            <i-table size="large" :columns="column" :data="data"></i-table>
+            <i-table size="large" :columns="column" :data="filterData"></i-table>
         </Card>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.5.15/vue.min.js"></script>
@@ -46,18 +47,31 @@
                 }
             }],
             data: [
-                { describe: '文字剧中对齐', url: './Vertical center of text/demo.html' }
+                { describe: '文字剧中对齐', url: './Vertical center of text/demo.html' },
+                { describe: '圆角', url: './Vertical center of text/demo.html' },
+                { describe: '阴影', url: './Vertical center of text/demo.html' },
+                { describe: '渐变', url: './Vertical center of text/demo.html' }
             ],
             data1: [],
-            value1: ''
+            searchValue: ''
+        },
+        computed:{
+            filterData:function(){
+                if(!!this.searchValue){
+                    let tmpSearchValue = this.searchValue;
+                    return this.data.filter(function(value){
+                        if(value.describe.indexOf(tmpSearchValue)!=-1){
+                            return value;
+                        }
+                    });
+                }else{
+                    return this.data;
+                }
+            }
         },
         methods: {
             handleSearch1(value) {
-                this.data1 = !value ? [] : [
-                    value,
-                    value + value,
-                    value + value + value
-                ];
+                console.log("hello");
             }
         }
     });

@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>各种 CSS 小Demo</title>
+    <link href="./resource/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="https://cdn.bootcss.com/iview/2.10.1/styles/iview.css" rel="stylesheet">
     <style>
     header {
         height: 150px;
     }
-
     body {
         background: #f8f8f9;
+    }
+    footer{
+        margin-top: 2em;
+        color: #80848f;
+        text-align: center;
+        font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
     }
     </style>
 </head>
@@ -20,13 +26,19 @@
     <header></header>
     <div id="app" style="max-width: 1200px;margin: auto;">
         <Card>
-            <!-- <auto-complete size="large" v-model="value1" :data="data1" @on-search="handleSearch1" placeholder="搜索关键字"></auto-complete> -->
-            <i-input size="large" placeholder="搜索关键字" v-model="searchValue"></i-input>
+            <i-input size="large" placeholder="搜索关键字" v-model="searchValue" @on-blur="tanglv"></i-input>
             <br>
             <br>
             <i-table size="large" :columns="column" :data="filterData"></i-table>
         </Card>
     </div>
+    <footer>
+        <p>Code by tanglv</p>
+        <p>
+            <i class="ivu-icon ivu-icon-email" style="font-size: 18px;vertical-align: bottom;"></i>
+            tangchaofalv@163.com
+        </p>
+    </footer>
     <script src="https://cdn.bootcss.com/vue/2.5.15/vue.min.js"></script>
     <script src="https://cdn.bootcss.com/iview/2.10.1/iview.min.js"></script>
     <script src="https://cdn.bootcss.com/iview/2.10.1/locale/zh-CN.js"></script>
@@ -48,23 +60,20 @@
             }],
             data: [
                 { describe: '文字剧中对齐', url: './Vertical center of text/demo.html' },
-                { describe: '圆角', url: './Vertical center of text/demo.html' },
-                { describe: '阴影', url: './Vertical center of text/demo.html' },
-                { describe: '渐变', url: './Vertical center of text/demo.html' }
+                { describe: '圆角-阴影-渐变', url: './radius-shadow-gradient/demo.html' }
             ],
-            data1: [],
             searchValue: ''
         },
-        computed:{
-            filterData:function(){
-                if(!!this.searchValue){
+        computed: {
+            filterData: function() {
+                if (!!this.searchValue) {
                     let tmpSearchValue = this.searchValue;
-                    return this.data.filter(function(value){
-                        if(value.describe.indexOf(tmpSearchValue)!=-1){
+                    return this.data.filter(function(value) {
+                        if (value.describe.indexOf(tmpSearchValue) != -1) {
                             return value;
                         }
                     });
-                }else{
+                } else {
                     return this.data;
                 }
             }
@@ -72,6 +81,9 @@
         methods: {
             handleSearch1(value) {
                 console.log("hello");
+            },
+            tanglv: function() {
+                console.log("hello tanglv");
             }
         }
     });

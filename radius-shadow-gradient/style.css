@@ -1,0 +1,31 @@
+body{
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+	background: #f8f8f9;
+}
+.chapter{
+	border-left: 3px solid darkblue;
+	text-indent:1em;
+}
+.rounded-corner{
+	width: 100px;
+	height: 100px;
+	background-color: lightblue;
+	margin: auto;
+	border-radius:10px 20px 30px;
+}
+
+.shadow{
+	width: 50px;
+	height: 50px;
+	background-color: lightblue;
+	margin: auto;
+	box-shadow:  0 0 20px -5px #000;
+}
+
+.gradient{
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	background: -webkit-linear-gradient(right bottom,red,blue,lightblue);  
+	background: linear-gradient(right,red,blue);  
+}

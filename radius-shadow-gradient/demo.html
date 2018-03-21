@@ -8,11 +8,49 @@
 </head>
 <body>
 	<h3 class="chapter">圆角</h3>
-	<div class="rounded-corner">
-		border-radius: length|percentage
+	<fieldset>
+		<legend>选项说明</legend>
+		<ul>
+			<li>border-radius：[ length | percentage ]{1,4} [ / [ length | percentage ]{1,4} ]?</li>
+			<ol>
+				<li>一个参数值，将用于全部的四个角</li>
+				<li>两个参数值，第一个用于上左(top-left)、下右(bottom-right)；第二个用于上右(top-right)、下左(bottom-left)</li>
+				<li>三个参数，第一个：上左(top-left)、第二个：上右(top-right)、下左(bottom-left)；第三个：下右(bottom-right)</li>
+				<li>四个参数，上左开始 顺时钟赋值</li>
+			</ol>
+		</ul>
+	</fieldset>
+	<div class="rounded-corner rounded-corner-one">
+		一个值
 	</div>
-	<br>
+
+	<div class="rounded-corner rounded-corner-two">
+		两个值
+	</div>
+
+	<div class="rounded-corner rounded-corner-three">
+		三个值
+	</div>
+
+	<div class="rounded-corner rounded-corner-four">
+		四个值
+	</div>
+	<hr>
 	<h3 class="chapter">阴影</h3>
+	<fieldset>
+		<legend>选项说明</legend>
+		<ul>
+			<li>box-shadow: h-shadow v-shadow blur spread color inset;</li>
+			<ul>
+				<li>h-shadow:必填|水平偏移位置|正负值</li>
+				<li>v-shadow:必填|垂直偏移位置|正负值</li>
+				<li>blur:可选|模糊距离|仅为正值</li>
+				<li>spread:可选|阴影尺寸|正负值</li>
+				<li>color:可选|阴影颜色</li>
+				<li>inset:可选|将外部阴影改为内部阴影</li>
+			</ul>
+		</ul>
+	</fieldset>
 	<div class="shadow"></div>
 	<br>
 	<h3 class="chapter">渐变</h3>

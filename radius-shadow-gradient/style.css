@@ -1,24 +1,32 @@
 body{
 	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 	background: #f8f8f9;
+	color:#495060;
 }
 .chapter{
 	border-left: 3px solid darkblue;
 	text-indent:1em;
 }
 .rounded-corner{
+	display: inline-block;
+	margin-top:1em;
 	width: 100px;
 	height: 100px;
+	line-height: 100px;
+	text-align: center;
 	background-color: lightblue;
-	margin: auto;
-	border-radius:10px 20px 30px;
 }
+.rounded-corner-one{border-radius:10px;}
+.rounded-corner-two{border-radius:10px 30px;}
+.rounded-corner-three{border-radius: 10px 20px 30px;}
+.rounded-corner-four{border-radius: 10px 20px 30px 40px;}
 
 .shadow{
 	width: 50px;
 	height: 50px;
-	background-color: lightblue;
 	margin: auto;
+	margin-top:1em;
+	background-color: lightblue;
 	box-shadow:  0 0 20px -5px #000;
 }
 

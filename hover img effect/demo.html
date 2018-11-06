@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hover Image Effect</title>
+    <style type="text/css">
+    /*图片容器*/
+    .img-container {
+        position: relative;
+        display: inline-block;
+        font-size: 0;
+    }
+    /*图片大小*/
+    .img-container>img {
+        width: 200px;
+        height: auto;
+    }
+    /*遮罩层*/
+    .img-cover {
+        position: absolute;
+        display: table;
+        top: 0;
+        width: 100%;
+        height: 200px;
+        color: #fff;
+        font-size: 14px;
+        background-color: rgba(0, 0, 0, .5);
+        opacity: 0;
+        transition: opacity .5s;
+    }
+    .img-container:hover .img-cover {
+        opacity: 1;
+    }
+    /*遮罩层文字*/    
+    .img-cover>span {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="img-container">
+        <img src="http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/VFRa4u46RcaPu*y0OEu4s0EEDXRy7yuMSbKCAHStF4Q!/r/dFkAAAAAAAAA" alt="">
+        <div class="img-cover">
+            <span>查看</span>
+        </div>
+    </div>
+</body>
+
+</html>

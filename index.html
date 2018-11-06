@@ -7,7 +7,7 @@
     <link href="./resource/images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="https://cdn.bootcss.com/iview/2.10.1/styles/iview.css" rel="stylesheet">
     <style>
-    header {
+        header {
         height: 150px;
     }
     body {
@@ -26,7 +26,7 @@
     <header></header>
     <div id="app" style="max-width: 1200px;margin: auto;">
         <Card>
-            <i-input size="large" placeholder="搜索关键字" v-model="searchValue" @on-blur="tanglv"></i-input>
+            <i-input size="large" placeholder="搜索关键字" v-model="searchValue"></i-input>
             <br>
             <br>
             <i-table size="large" :columns="column" :data="filterData"></i-table>
@@ -60,7 +60,8 @@
             }],
             data: [
                 { describe: '文字剧中对齐', url: './Vertical center of text/demo.html' },
-                { describe: '圆角-阴影-渐变', url: './radius-shadow-gradient/demo.html' }
+                { describe: '圆角-阴影-渐变', url: './radius-shadow-gradient/demo.html' },
+                { describe: '图片hover效果', url: './hover img effect/demo.html' }
             ],
             searchValue: ''
         },
@@ -78,14 +79,6 @@
                 }
             }
         },
-        methods: {
-            handleSearch1(value) {
-                console.log("hello");
-            },
-            tanglv: function() {
-                console.log("hello tanglv");
-            }
-        }
     });
     </script>
 </body>

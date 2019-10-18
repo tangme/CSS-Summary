@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <style type="text/css">
+    body {
+        margin: 0;
+    }
+
+    .box {
+        background-color: gray;
+        /*overflow: hidden;*/
+        height: 100px;
+    }
+
+    .left {
+        float: left;
+        /*display: inline-block;*/
+        opacity: .7;
+        width: 33.33%;
+        height: 100%;
+        background-color: Chocolate;
+    }
+
+    .center {
+        float: left;
+        /*display: inline-block;*/
+        opacity: .7;
+        width: 33.33%;
+        background-color: LightSlateGrey;
+    }
+
+    .right {
+        float: left;
+        /*display: inline-block;*/
+        opacity: .7;
+        width: 33.33%;
+        height: 100%;
+        background-color: MediumAquaMarine;
+    }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>等分三列，水平垂直居中</legend>
+        <h4>示例</h4>
+        <div class="box">
+            <div class="left">
+                <table style="width: 100%;height: 100%;text-align: center;">
+                    <tr>
+                        <td>table元素标签实现</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="center">
+                center
+                <textarea>123</textarea>
+            </div>
+            <div class="right">
+            	<div style="height: 100%;width: 100%;display: table;">
+            		<div style="display: table-cell;vertical-align: middle;text-align: center;">
+            			<img src="../resource/images/favicon.ico">
+            			div仿table实现
+            		</div>
+            	</div>
+            </div>
+        </div>
+        <h4>使用条件</h4>
+        <ul>
+            <li>外层box为固定高度</li>
+        </ul>
+        <h4>实现说明</h4>
+        <ul>
+        	<li>子列为浮动，宽度为33.33%。规避设为inline-block，元素之间存在空格的问题</li>
+        	<li>子列高度100%，保持与外盒高度一致</li>
+        	<li>子列内部如需，水平垂直居中，使用table，或div仿table效果</li>
+        </ul>
+    </fieldset>
+    <br>
+</body>
+
+</html>
